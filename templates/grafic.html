@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>{{ coin_name }} Grafic</title>
+    <style>
+      body {
+        font-family: "Outfit", sans-serif;
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        background-color: #1e293b;
+        color: white; /* Add this for text visibility */
+      }
+      .positive-growth {
+        color: #00ff88;
+      }
+      .negative-growth {
+        color: #ff4444;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container mx-auto p-8">
+      <a href="/" class="text-xs border rounded-full px-2 py-1">← Back</a>
+      <div class="flex items-center">
+        <img
+          src="{{ url_for('static', filename='icons/' + coin_name|lower + '.ico') }}"
+          alt="icon"
+        />
+        <h1 class="text-3xl font-bold mt-4 mb-4 text-end">
+          {{ coin_name }} Price History
+        </h1>
+      </div>
+      <img
+        src="data:image/png;base64,{{ plot_url }}"
+        alt="{{ coin_name }} Price Graph"
+        class="mx-auto mb-4"
+      />
+      <div class="text-center">
+        <p class="mb-2"><strong>Current Price:</strong> ${{ last_price }}</p>
+        <p class="mb-2">
+          <strong>Total Growth:</strong>
+          <span
+            class="{{ 'positive-growth' if total_growth.startswith('+') else 'negative-growth' }}"
+          >
+            {{ total_growth }}
+          </span>
+        </p>
+        <p class="mb-4">
+          <strong>Last Updated:</strong>
+          {{ last_timestamp }}
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
