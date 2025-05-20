@@ -3,14 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Favicon -->
+    <link rel="icon" href="/static/icons/favicon.png" type="image/x-icon" />
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Tailwind via CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <title>{{ coin_name }} Grafic</title>
+    <title>{{ coin_name }} Chart</title>
     <style>
       body {
         font-family: "Outfit", sans-serif;
@@ -30,7 +36,13 @@
   </head>
   <body>
     <div class="container mx-auto p-8">
-      <a href="/" class="text-xs border rounded-full px-2 py-1">← Back</a>
+      <a href="/" class="text-xs border rounded-full px-2 py-1 group">
+        <span
+          class="inline-block transition-transform duration-200 group-hover:-translate-x-1"
+          >←</span
+        >
+        Back
+      </a>
       <div class="flex items-center">
         <img
           src="{{ url_for('static', filename='icons/' + coin_name|lower + '.ico') }}"

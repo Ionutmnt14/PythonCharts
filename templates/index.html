@@ -3,16 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="/static/icons/favicon.png" type="image/x-icon" />
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Tailwind via CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <title>Crypto Price Tracker</title>
-  </head>
-  <style>
+
+    <title>Crypto Charts</title>
+
+    <style>
       body {
         font-family: "Outfit", sans-serif;
         padding: 0;
@@ -22,55 +30,121 @@
         width: 100vw;
         height: 100vh;
       }
-      
     </style>
   </head>
+
   <body>
-    <section class="w-full h-screen flex flex-col items-center justify-between pb-6 text-white">
-        <header>
-            <h1 class="text-center text-5xl font-bold my-8">Crypto Graphs</h1>
-        </header>
-        
-        <main class="w-full">
-            <div class="w-full flex flex-wrap justify-center gap-6 ">
-                <div class="bg-[#090446] shadow-lg rounded-2xl p-6 max-w-xs w-full h-full transition hover:scale-105 text-right">
-                    <div class="flex items-end gap-2">
-                         <img src="/static/icons/bitcoin.ico" alt="bitcoin" class="w-10 h-10">   
-                        <h2 class="text-xl font-bold text-white mb-2 text-left">Bitcoin Chart</h2>
-                    </div>
-                    <p class="text-gray-500 text-left pb-3">The original cryptocurrency and digital gold, known for its limited supply and store of value.</p>
-                    <a href="/crypto/bitcoin" class="text-xs border rounded-full px-2 py-1 ">View Chart →</a>
-                </div>
-                <div class="bg-[#090446] shadow-lg rounded-2xl p-6 max-w-xs w-full h-full transition hover:scale-105 text-right">
-                    <div class="flex items-end gap-2">
-                         <img src="/static/icons/ethereum.ico" alt="ethereum" class="w-10 h-10">   
-                        <h2 class="text-xl font-bold text-white mb-2 text-left">Ethereum Chart</h2>
-                    </div>
-                    <p class="text-gray-500 text-left pb-3">A decentralized platform powering smart contracts and dApps with its native currency, Ether.</p>
-                    <a href="/crypto/ethereum" class="text-xs border rounded-full px-2 py-1 ">View Chart →</a>
-                </div>
-                <div class="bg-[#090446] shadow-lg rounded-2xl p-6 max-w-xs w-full h-full transition hover:scale-105 text-right">
-                    <div class="flex items-end gap-2">
-                         <img src="/static/icons/dogecoin.ico" alt="dogecoin" class="w-10 h-10">   
-                        <h2 class="text-xl font-bold text-white mb-2 text-left">Dogecoin Chart</h2>
-                    </div>
-                    <p class="text-gray-500 text-left pb-3">A meme-born crypto with a strong community, known for fast, low-cost transactions.</p>
-                    <a href="/crypto/dogecoin" class="text-xs border rounded-full px-2 py-1 ">View Chart →</a>
-                </div>
+    <section
+      class="w-full h-screen flex flex-col items-center justify-between pb-6 text-white"
+    >
+      <!-- Header -->
+      <header>
+        <h1 class="text-center text-5xl font-bold my-8">Crypto Charts</h1>
+      </header>
 
-                
+      <!-- Main Content -->
+      <main class="w-full">
+        <div class="w-full flex flex-wrap justify-center gap-6">
+          <!-- Bitcoin Card -->
+          <div
+            class="bg-[#090446] shadow-lg rounded-2xl p-6 max-w-xs w-full h-full transition hover:scale-105 text-right"
+          >
+            <div class="flex items-end gap-2">
+              <img
+                src="/static/icons/bitcoin.ico"
+                alt="bitcoin"
+                class="w-10 h-10"
+              />
+              <h2 class="text-xl font-bold text-white mb-2 text-left">
+                Bitcoin
+              </h2>
             </div>
-
-            
-        </main>
-        <footer class="flex gap-1">
-            <p class="">
-                Data from
+            <p class="text-gray-500 text-left pb-3">
+              The original cryptocurrency and digital gold, known for its
+              limited supply and store of value.
             </p>
-            <a href="https://www.coindesk.com/" target="_blank" rel="noopener noreferrer" class="underline">CoinDesk API</a>
+            <a
+              href="/crypto/bitcoin"
+              class="text-xs border rounded-full px-2 py-1 group"
+              >View Chart
+              <span
+                class="inline-block transition-transform duration-200 group-hover:translate-x-1"
+                >→</span
+              ></a
+            >
+          </div>
 
-        </footer>
+          <!-- Ethereum Card -->
+          <div
+            class="bg-[#090446] shadow-lg rounded-2xl p-6 max-w-xs w-full h-full transition hover:scale-105 text-right"
+          >
+            <div class="flex items-end gap-2">
+              <img
+                src="/static/icons/ethereum.ico"
+                alt="ethereum"
+                class="w-10 h-10"
+              />
+              <h2 class="text-xl font-bold text-white mb-2 text-left">
+                Ethereum
+              </h2>
+            </div>
+            <p class="text-gray-500 text-left pb-3">
+              A decentralized platform that powers smart contracts and
+              decentralized applications using its native currency.
+            </p>
+            <a
+              href="/crypto/ethereum"
+              class="text-xs border rounded-full px-2 py-1 group"
+              >View Chart
+              <span
+                class="inline-block transition-transform duration-200 group-hover:translate-x-1"
+                >→</span
+              >
+            </a>
+          </div>
+
+          <!-- Dogecoin Card -->
+          <div
+            class="bg-[#090446] shadow-lg rounded-2xl p-6 max-w-xs w-full h-full transition hover:scale-105 text-right"
+          >
+            <div class="flex items-end gap-2">
+              <img
+                src="/static/icons/dogecoin.ico"
+                alt="dogecoin"
+                class="w-10 h-10"
+              />
+              <h2 class="text-xl font-bold text-white mb-2 text-left">
+                Dogecoin
+              </h2>
+            </div>
+            <p class="text-gray-500 text-left pb-3">
+              A meme-born crypto with a strong community, known for fast and
+              low-cost transactions.
+            </p>
+            <a
+              href="/crypto/dogecoin"
+              class="text-xs border rounded-full px-2 py-1 group"
+              >View Chart
+              <span
+                class="inline-block transition-transform duration-200 group-hover:translate-x-1"
+                >→</span
+              >
+            </a>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="flex gap-1">
+        <p>Data from</p>
+        <a
+          href="https://www.coindesk.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="underline"
+          >CoinDesk API</a
+        >
+      </footer>
     </section>
-    </body>
-    </html>
-    
+  </body>
+</html>
